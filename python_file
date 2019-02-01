@@ -1,0 +1,48 @@
+
+def supplier(str, days):
+    city = str.split(",")[0]
+    supplier = str.split(",")[1]
+    price = int(str.split(",")[2])
+
+    if (supplier == "B") and  (days < 3):
+        return None
+    elif (supplier == "A") and (days == 1):
+        price = price *1.5
+    elif (supplier == "C") and (days >= 7):
+        price = price*0.1
+    else (supplier == "D") and (days < 7):
+        price = price* 1.1
+
+    return [city, supplier, price]
+
+
+
+
+
+def hotel(filename):
+    infile = open(filename, "r")
+    lst = infile.readlines()
+    infile.close()
+    outfile = open("result.txt", "w")
+    n = int(lst[0]) ## number of inputs of suppliers
+
+    i = n
+    d = 0
+    for (i <= (int(lst[n + 1]) + n)):
+
+        work_list= supplier(lst[i], days_until)
+        days_until= work_list[d+ n]
+        if (work_list is None):
+            outfile.write("None\n")
+        else:
+            outfile.write(str(work_list[2])) ## printing price ## recognized that it gives price for different hotels, but couldn't complete for time issue.
+
+
+
+
+
+
+
+
+
+
